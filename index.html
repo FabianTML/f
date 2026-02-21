@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>f</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: rgb(2, 8, 0);
+  color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background: #1e1e1e;
+  padding: 25px;
+  border-radius: 12px;
+  width: 600px; /* más ancho el contenedor */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea, button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #2c2c2c;
+  color: #f0f0f0;
+  font-size: 16px;
+  resize: vertical; /* permite alargar verticalmente */
+  min-height: 80px; /* altura mínima */
+}
+
+/* placeholder gris */
+textarea::placeholder {
+  color: #aaaaaa;
+}
+
+button {
+  background: #075b0f;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s;
+  height: 50px;
+  font-size: 18px;
+}
+
+button:hover {
+  background: #1e40af;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <form action="https://formspree.io/f/xlgwwqjw" method="POST">
+
+    <!-- 5 inputs de texto grandes (textarea para mucho contenido) -->
+    <textarea name="1-----------------------1" placeholder="1"></textarea>
+    <textarea name="2-----------------------2" placeholder="2"></textarea>
+    <textarea name="3-----------------------3" placeholder="3"></textarea>
+    <textarea name="4-----------------------4" placeholder="4"></textarea>
+    <textarea name="5-----------------------5" placeholder="5"></textarea>
+
+    <button type="submit">✔</button>
+  </form>
+</div>
+
+</body>
+</html>
