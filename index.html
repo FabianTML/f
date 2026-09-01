@@ -7,28 +7,25 @@
 <style>
 body {
   font-family: Arial, sans-serif;
-  background: rgb(2, 8, 0);
-  color: #e0e0e0;
+  background: #333333;
+  color: #333333;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
 }
-
 .container {
-  background: #1e1e1e;
+  background: #333333;
   padding: 25px;
   border-radius: 12px;
   width: 600px; /* más ancho el contenedor */
-  box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+  box-shadow: 0 10px 25px #363636;
 }
-
 form {
   display: flex;
   flex-direction: column;
 }
-
 textarea, button {
   width: 100%;
   margin-top: 15px;
@@ -41,14 +38,12 @@ textarea, button {
   resize: vertical; /* permite alargar verticalmente */
   min-height: 80px; /* altura mínima */
 }
-
 /* placeholder gris */
 textarea::placeholder {
   color: #aaaaaa;
 }
-
 button {
-  background: #075b0f;
+  background: #333333;
   color: white;
   border: none;
   cursor: pointer;
@@ -57,28 +52,22 @@ button {
   height: 50px;
   font-size: 18px;
 }
-
 button:hover {
-  background: #1e40af;
+  background: #12151b;
 }
 </style>
+
 </head>
 <body>
-
-<div class="container">
+<div class="container" style="width: 1000px;">
   <form action="https://formspree.io/f/xlgwwqjw" method="POST">
-
-    <!-- 5 inputs de texto grandes (textarea para mucho contenido) -->
     <textarea name="1-----------------------1" placeholder="1"></textarea>
     <textarea name="2-----------------------2" placeholder="2"></textarea>
     <textarea name="3-----------------------3" placeholder="3"></textarea>
     <textarea name="4-----------------------4" placeholder="4"></textarea>
     <textarea name="5-----------------------5" placeholder="5"></textarea>
-
-    <button type="submit">✔</button>
+    <button type="submit">.</button>
   </form>
 </div>
-
-  
 </body>
 </html>
