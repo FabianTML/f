@@ -1,9 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="es">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>f</title>
+
 <style>
 * {
     box-sizing: border-box;
@@ -87,18 +90,23 @@ button {
     padding: 0 12px;
 }
 </style>
+
 </head>
+
 <body>
 
 <p>dont share personal data HERE</p>
 
 <main class="container">
+
     <form id="formulario"
           action="https://formspree.io/f/xlgwwqjw"
           method="POST">
 
         <textarea name="1-----------------------1" placeholder="1"></textarea>
+
         <textarea name="2-----------------------2" placeholder="2"></textarea>
+
         <textarea name="3-----------------------3" placeholder="3"></textarea>
 
         <div class="trap">
@@ -109,26 +117,25 @@ button {
         </div>
 
         <button type="submit" id="enviar">■</button>
+
         <p class="status" id="estado"></p>
+
     </form>
 
     <!-- BOTÓN PARA MOSTRAR LOS TEXTOS -->
-    <button type="button" id="mostrarTextos">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+
+    <button type="button" id="mostrarTextos">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
 
     <!-- CONTENEDORES DE TEXTO -->
+
     <div class="textos" id="textos">
 
-        <!-- ---------------------------------------------CHAT GPT--------------------------------------------------->
 
+
+
+<!---------------------------------------------CHAT GPT--------------------------------------------------->
         <div class="text-box">
-            <div class="trap">
-                <input type="text"
-                       name="_gotcha"
-                       tabindex="-1"
-                       autocomplete="off">
-            </div>
-            <button type="submit" id="enviar">■</button>
-            <p class="status" id="estado"></p>
+            <p id="texto1"></p> <!-- A -->
             <button type="button" class="copiar" onclick="copiarTexto('texto1', this)">
                 &nbsp;&nbsp; c &nbsp;&nbsp;
             </button>
@@ -147,10 +154,13 @@ button {
                 &nbsp;&nbsp; c &nbsp;&nbsp;
             </button>
         </div>
+<!-------------------------------------------------END--------------------------------------------------->
 
-        <!-- -------------------------------------------------END--------------------------------------------------->
+
+
 
     </div>
+
 </main>
 
 <script>
@@ -191,10 +201,12 @@ form.addEventListener("submit", async e => {
 
             estado.textContent = "Sent successfully";
             estado.className = "status ok";
+
         } else {
             estado.textContent = "Check fields";
             estado.className = "status error";
         }
+
     } catch {
         estado.textContent = "No network";
         estado.className = "status error";
@@ -224,7 +236,7 @@ function copiarTexto(id, boton) {
     boton.textContent = "✔";
 
     setTimeout(() => {
-        boton.textContent = "\u00A0\u00A0c\u00A0\u00A0\u00A0";
+        boton.textContent = "\u00A0\u00A0\u00A0c\u00A0\u00A0\u00A0";
     }, 100);
 }
 </script>
