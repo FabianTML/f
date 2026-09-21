@@ -146,7 +146,23 @@ button {
         </div>
 
         <div class="text-box">
-            <p id="texto2">783457 874358435 87893475 02138</p> <!-- B -->
+            <p id="texto2">&lt;textarea name="1-----------------------1" placeholder="1"&gt;&lt;/textarea&gt;
+
+&lt;textarea name="2-----------------------2" placeholder="2"&gt;&lt;/textarea&gt;
+
+&lt;textarea name="3-----------------------3" placeholder="3"&gt;&lt;/textarea&gt;
+
+&lt;div class="trap"&gt;
+
+    &lt;input type="text"
+
+           name="_gotcha"
+
+           tabindex="-1"
+
+           autocomplete="off"&gt;
+
+&lt;/div&gt;</p> <!-- B -->
             <button type="button" class="copiar" onclick="copiarTexto('texto2', this)">
                 &nbsp;&nbsp; c &nbsp;&nbsp;
             </button>
@@ -222,10 +238,10 @@ document.getElementById("mostrarTextos").addEventListener("click", function() {
 
     if (textos.style.display === "block") {
         textos.style.display = "none";
-        this.textContent = "\u00A0".repeat(5);
+        this.textContent = " ".repeat(5);
     } else {
         textos.style.display = "block";
-        this.textContent = "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0↑↑↑\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0";
+        this.textContent = "      ↑↑↑      ";
     }
 });
 
@@ -237,7 +253,7 @@ function copiarTexto(id, boton) {
     boton.textContent = "✔";
 
     setTimeout(() => {
-        boton.textContent = "\u00A0\u00A0\u00A0c\u00A0\u00A0\u00A0";
+        boton.textContent = "   c   ";
     }, 100);
 }
 </script>
