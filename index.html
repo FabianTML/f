@@ -5,94 +5,222 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>f</title>
 <style>
+* {
+    box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #333333;
-  color: #333333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+    margin: 0;
+    padding: 30px 15px;
+    font-family: Arial, sans-serif;
+    background: #1a1b1e;
+    color: white;
 }
+
 .container {
-  background: #333333;
-  padding: 25px;
-  border-radius: 12px;
-  width: 600px; /* más ancho el contenedor */
-  box-shadow: 0 10px 25px #363636;
+    max-width: 700px;
+    margin: auto;
 }
+
 form {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
-textarea, button {
-  width: 100%;
-  margin-top: 15px;
-  padding: 15px;
-  border-radius: 8px;
-  border: 1px solid #333;
-  background: #2c2c2c;
-  color: #f0f0f0;
-  font-size: 16px;
-  resize: vertical; /* permite alargar verticalmente */
-  min-height: 80px; /* altura mínima */
+
+textarea {
+    width: 100%;
+    min-height: 90px;
+    padding: 10px;
+    background: #2b2d32;
+    color: white;
+    border: 1px solid #3d4047;
+    border-radius: 6px;
+    resize: vertical;
 }
-/* placeholder gris */
-textarea::placeholder {
-  color: #aaaaaa;
-}
+
 button {
-  background: #333333;
-  color: white;
-  border: none;
-  cursor: pointer;
-  margin-top: 20px;
-  transition: background 0.3s;
-  height: 50px;
-  font-size: 18px;
+    height: 45px;
+    border: 0;
+    border-radius: 6px;
+    background: #8fb0ff;
+    cursor: pointer;
 }
-button:hover {
-  background: #12151b;
+
+.trap {
+    position: absolute;
+    left: -9999px;
 }
-h1 {
-  color: white;
-  font-size: 48px;
-  text-align: center;
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-  margin: 0;
+
+.status {
+    text-align: center;
+    margin: 0;
 }
-.texto-copiable {
-  color: white;
-  background: #2c2c2c;
-  padding: 20px;
-  margin-top: 20px;
-  width: 100%;
-  max-width: 1000px;
-  box-sizing: border-box;
-  border-radius: 8px;
-  user-select: text;
-  cursor: text;
-  line-height: 1.5;
+
+.ok {
+    color: #7fd6a0;
+}
+
+.error {
+    color: #ff8f8f;
+}
+
+.textos {
+    display: none;
+    margin-top: 20px;
+}
+
+.text-box {
+    margin-top: 15px;
+    padding: 15px;
+    background: #2b2d32;
+    border: 1px solid #3d4047;
+    border-radius: 6px;
+}
+
+.text-box p {
+    margin: 0 0 10px 0;
+}
+
+.copiar {
+    height: 35px;
+    padding: 0 12px;
 }
 </style>
-
 </head>
 <body>
-<div class="container" style="width: 1000px;">
-  <form action="https://formspree.io/f/xlgwwqjw" method="POST">
-    <textarea name="1-----------------------1" placeholder="1"></textarea>
-    <textarea name="2-----------------------2" placeholder="2"></textarea>
-    <textarea name="3-----------------------3" placeholder="3"></textarea>
-    <textarea name="4-----------------------4" placeholder="4"></textarea>
-    <textarea name="5-----------------------5" placeholder="5"></textarea>
-    <button type="submit">.</button>
-  </form>
-</div>
-<div class="texto-copiable">A continuación te enviaré imágenes que contienen texto. Quiero que transcribas y reescribas el contenido exactamente como aparece.<br><br>Tu respuesta debe contener únicamente el texto transcrito. No agregues comentarios, explicaciones, introducciones, conclusiones ni ninguna otra observación.</div>
+
+<p>dont share personal data HERE</p>
+
+<main class="container">
+    <form id="formulario"
+          action="https://formspree.io/f/xlgwwqjw"
+          method="POST">
+
+        <textarea name="1-----------------------1" placeholder="1"></textarea>
+        <textarea name="2-----------------------2" placeholder="2"></textarea>
+        <textarea name="3-----------------------3" placeholder="3"></textarea>
+
+        <div class="trap">
+            <input type="text"
+                   name="_gotcha"
+                   tabindex="-1"
+                   autocomplete="off">
+        </div>
+
+        <button type="submit" id="enviar">■</button>
+        <p class="status" id="estado"></p>
+    </form>
+
+    <!-- BOTÓN PARA MOSTRAR LOS TEXTOS -->
+    <button type="button" id="mostrarTextos">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+
+    <!-- CONTENEDORES DE TEXTO -->
+    <div class="textos" id="textos">
+
+        <!-- ---------------------------------------------CHAT GPT--------------------------------------------------->
+
+        <div class="text-box">
+            <p id="texto1"></p> <!-- A -->
+            <button type="button" class="copiar" onclick="copiarTexto('texto1', this)">
+                &nbsp;&nbsp; c &nbsp;&nbsp;
+            </button>
+        </div>
+
+        <div class="text-box">
+            <p id="texto2">Testing this <br>area</p> <!-- B -->
+            <button type="button" class="copiar" onclick="copiarTexto('texto2', this)">
+                &nbsp;&nbsp; c &nbsp;&nbsp;
+            </button>
+        </div>
+
+        <div class="text-box">
+            <p id="texto3"></p> <!-- C -->
+            <button type="button" class="copiar" onclick="copiarTexto('texto3', this)">
+                &nbsp;&nbsp; c &nbsp;&nbsp;
+            </button>
+        </div>
+
+        <!-- -------------------------------------------------END--------------------------------------------------->
+
+    </div>
+</main>
+
+<script>
+const form = document.getElementById("formulario");
+const boton = document.getElementById("enviar");
+const estado = document.getElementById("estado");
+const areas = form.querySelectorAll("textarea");
+
+areas.forEach(area => {
+    area.addEventListener("input", () => {
+        area.style.height = "auto";
+        area.style.height = area.scrollHeight + "px";
+    });
+});
+
+form.addEventListener("submit", async e => {
+    e.preventDefault();
+
+    boton.disabled = true;
+    boton.textContent = "Sending...";
+    estado.textContent = "";
+
+    try {
+        const respuesta = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: {
+                Accept: "application/json"
+            }
+        });
+
+        if (respuesta.ok) {
+            form.reset();
+
+            areas.forEach(area => {
+                area.style.height = "";
+            });
+
+            estado.textContent = "Sent successfully";
+            estado.className = "status ok";
+        } else {
+            estado.textContent = "Check fields";
+            estado.className = "status error";
+        }
+    } catch {
+        estado.textContent = "No network";
+        estado.className = "status error";
+    }
+
+    boton.disabled = false;
+    boton.textContent = "■";
+});
+
+document.getElementById("mostrarTextos").addEventListener("click", function() {
+    const textos = document.getElementById("textos");
+
+    if (textos.style.display === "block") {
+        textos.style.display = "none";
+        this.textContent = "\u00A0".repeat(5);
+    } else {
+        textos.style.display = "block";
+        this.textContent = "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0↑↑↑\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0";
+    }
+});
+
+function copiarTexto(id, boton) {
+    const texto = document.getElementById(id).textContent;
+
+    navigator.clipboard.writeText(texto);
+
+    boton.textContent = "✔";
+
+    setTimeout(() => {
+        boton.textContent = "\u00A0\u00A0c\u00A0\u00A0\u00A0";
+    }, 100);
+}
+</script>
+
 </body>
 </html>
