@@ -121,7 +121,14 @@ button {
         <!-- ---------------------------------------------CHAT GPT--------------------------------------------------->
 
         <div class="text-box">
-            <p id="texto1">this is idk</p> <!-- A -->
+            <div class="trap">
+                <input type="text"
+                       name="_gotcha"
+                       tabindex="-1"
+                       autocomplete="off">
+            </div>
+            <button type="submit" id="enviar">■</button>
+            <p class="status" id="estado"></p>
             <button type="button" class="copiar" onclick="copiarTexto('texto1', this)">
                 &nbsp;&nbsp; c &nbsp;&nbsp;
             </button>
