@@ -130,43 +130,34 @@ button {
 
     <div class="textos" id="textos">
 
+
+
+
 <!---------------------------------------------CHAT GPT--------------------------------------------------->
         <div class="text-box">
-            <p id="texto1">&lt;div class="trap"&gt;
-    &lt;input type="text"
-           name="_gotcha"
-           tabindex="-1"
-           autocomplete="off"&gt;
-&lt;/div&gt;
-&lt;button type="submit" id="enviar"&gt;■&lt;/button&gt;
-&lt;p class="status" id="estado"&gt;&lt;/p&gt;</p> <!-- A -->
+            <p id="texto1"></p> <!-- A -->
             <button type="button" class="copiar" onclick="copiarTexto('texto1', this)">
                 &nbsp;&nbsp; c &nbsp;&nbsp;
             </button>
         </div>
 
+
+
+
+
+        
+
         <div class="text-box">
-            <p id="texto2">&lt;textarea name="1-----------------------1" placeholder="1"&gt;&lt;/textarea&gt;
-
-&lt;textarea name="2-----------------------2" placeholder="2"&gt;&lt;/textarea&gt;
-
-&lt;textarea name="3-----------------------3" placeholder="3"&gt;&lt;/textarea&gt;
-
-&lt;div class="trap"&gt;
-
-    &lt;input type="text"
-
-           name="_gotcha"
-
-           tabindex="-1"
-
-           autocomplete="off"&gt;
-
-&lt;/div&gt;</p> <!-- B -->
+            <p id="texto2">Testing this <br>area</p> <!-- B -->
             <button type="button" class="copiar" onclick="copiarTexto('texto2', this)">
                 &nbsp;&nbsp; c &nbsp;&nbsp;
             </button>
         </div>
+
+
+
+
+
 
         <div class="text-box">
             <p id="texto3"></p> <!-- C -->
@@ -175,6 +166,9 @@ button {
             </button>
         </div>
 <!-------------------------------------------------END--------------------------------------------------->
+
+
+
 
     </div>
 
@@ -238,10 +232,10 @@ document.getElementById("mostrarTextos").addEventListener("click", function() {
 
     if (textos.style.display === "block") {
         textos.style.display = "none";
-        this.textContent = " ".repeat(5);
+        this.textContent = "\u00A0".repeat(5);
     } else {
         textos.style.display = "block";
-        this.textContent = "      ↑↑↑      ";
+        this.textContent = "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0↑↑↑\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0";
     }
 });
 
@@ -253,7 +247,7 @@ function copiarTexto(id, boton) {
     boton.textContent = "✔";
 
     setTimeout(() => {
-        boton.textContent = "   c   ";
+        boton.textContent = "\u00A0\u00A0\u00A0c\u00A0\u00A0\u00A0";
     }, 100);
 }
 </script>
